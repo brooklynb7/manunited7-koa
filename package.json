@@ -1,0 +1,41 @@
+{
+  "name": "manunited7-koa",
+  "version": "0.0.1",
+  "description": "Backend Service via koa",
+  "main": "index.js",
+  "scripts": {
+    "dev": "backpack dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brooklynb7/manunited7-koa.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brooklynb7/manunited7-koa/issues"
+  },
+  "homepage": "https://github.com/brooklynb7/manunited7-koa#readme",
+  "dependencies": {
+    "koa": "^2.5.0",
+    "koa-bodyparser": "^4.2.0",
+    "koa-compose": "^4.0.0",
+    "koa-csrf": "^3.0.6",
+    "koa-logger": "^3.1.0",
+    "koa-mount": "^3.0.0",
+    "koa-session": "^5.8.1",
+    "koa-static": "^4.0.2",
+    "koa-trie-router": "^2.1.6",
+    "require-directory": "^2.1.1"
+  },
+  "devDependencies": {
+    "backpack-core": "^0.5.0",
+    "eslint": "^4.18.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1"
+  }
+}
