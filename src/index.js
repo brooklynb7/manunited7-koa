@@ -6,6 +6,7 @@ const app = new Koa()
 const port = process.env.PORT || '3030'
 
 middleware.parser(app)
+middleware.serve(app)
 middleware.routes(app)
 
 app.listen(port, err => {

@@ -60,3 +60,4 @@ typings/
 .vscode/
 build/
 src/config/index.js
+.DS_Store

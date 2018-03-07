@@ -1,3 +1,5 @@
+'use strict'
+
 import routers from '../routes'
 import mount from 'koa-mount'
 
@@ -10,7 +12,6 @@ const pageNotFound = async ctx => {
   // we need to explicitly set 404 here
   // so that koa doesn't assign 200 on body=
   ctx.status = 404
-  console.log(ctx.type)
   switch (ctx.type) {
     case 'application/json':
       ctx.body = {
@@ -23,6 +24,22 @@ const pageNotFound = async ctx => {
   }
 }
 
+const internalError = async ctx => {
+  // we need to explicitly set 404 here
+  // so that koa doesn't assign 200 on body=
+  ctx.status = 500
+  switch (ctx.type) {
+    case 'application/json':
+      ctx.body = {
+        message: 'Internal Error'
+      }
+      break
+    default:
+      ctx.type = 'text'
+      ctx.body = 'Internal Error'
+  }
+}
+
 const error = async (ctx, next) => {
   try {
     await next()
@@ -30,8 +47,7 @@ const error = async (ctx, next) => {
     if (ctx.status === 404) {
       pageNotFound(ctx)
     } else {
-      ctx.type = 'html'
-      ctx.body = '<p>Something <em>exploded</em>, please contact Maru.</p>'
+      internalError(ctx)
     }
   }
 }
